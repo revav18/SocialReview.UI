@@ -1,7 +1,7 @@
 import { UserCredential } from "./userCredential";
 
 export interface CustomerRegister extends UserCredential {
-  fistName: string;
+  firstName: string;
   lastName: string;
   phoneNumber: string;
 }

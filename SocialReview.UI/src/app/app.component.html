@@ -1,8 +1,9 @@
 <mat-toolbar class="toolbar">
-  <button mat-icon-button (click)="sidenav.toggle()">
+  <button class="burger-button" mat-icon-button (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <img src="assets/SReview-logo.png" width="200">
+  <img src="assets/images/SReview-logo.png" class="logo">
+  <h1 class="logo-name">SReview</h1>
 </mat-toolbar>
 
 <mat-sidenav-container>
@@ -28,6 +29,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
+    <alert></alert>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

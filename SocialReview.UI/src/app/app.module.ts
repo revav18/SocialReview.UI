@@ -11,7 +11,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { AuthComponent } from './components/auth/auth.component'
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -19,10 +18,11 @@ import { CustomerRegisterComponent } from './components/customer-register/custom
 import { EstablishmentRegisterComponent } from './components/establishment-register/establishment-register.component';
 import { MatInputModule } from '@angular/material/input';
 
+import { AlertModule } from './_alert';
+
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
     LoginComponent,
     CustomerRegisterComponent,
     EstablishmentRegisterComponent
@@ -45,6 +45,8 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatCardModule,
     MatInputModule,
+
+   AlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]
