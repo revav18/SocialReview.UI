@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CustomerRegister } from '../models/customerRegister';
-import { Observable, catchError, throwError } from 'rxjs';
-import { UserCredential } from '../models/userCredential';
-import { EstablishmentRegister } from '../models/establishmentRegister';
-import { Role } from '../models/role';
+import { CustomerRegister } from './models/customerRegister.model';
+import { Observable } from 'rxjs';
+import { UserCredential } from '../auth/models/userCredential.model';
+import { EstablishmentRegister } from '../auth/models/establishmentRegister.model';
+import { Role } from '../core/models/role';
 
 @Injectable({
   providedIn: 'root'

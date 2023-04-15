@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth.service'
-import { CustomerRegister } from 'src/app/models/customerRegister';
+import { AuthService } from '../auth.service'
+import { CustomerRegister } from 'src/app/auth/models/customerRegister.model';
 import { Router } from '@angular/router';
-import { AlertService } from 'src/app/_alert';
+import { AlertService } from 'src/app/alert';
 
 @Component({
   selector: 'app-customer-register',

@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { filter } from 'rxjs/operators';
-
-import { Alert, AlertType, AlertOptions } from './alert.model';
+import { Alert } from './models/alert.model';
+import { AlertOptions } from './models/alertOptions.model';
+import { AlertType } from './models/alertType.model';
 
 @Injectable({ providedIn: 'root' })
 export class AlertService {

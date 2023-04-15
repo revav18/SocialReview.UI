@@ -1,4 +1,4 @@
-import { UserCredential } from "./userCredential";
+import { UserCredential } from "./userCredential.model";
 
 export interface EstablishmentRegister extends UserCredential {
   name: string;

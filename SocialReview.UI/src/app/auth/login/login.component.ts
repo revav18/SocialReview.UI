@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { FloatLabelType } from '@angular/material/form-field';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +7,7 @@ import { FloatLabelType } from '@angular/material/form-field';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) { }
 
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
