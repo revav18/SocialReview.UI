@@ -7,6 +7,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthRoutingModule } from './auth-routing.module';
+import { CoreModule } from '../core';
+import { AuthInterceptor } from './auth.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -15,17 +19,21 @@ import { AuthRoutingModule } from './auth-routing.module';
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    MatIconModule,
+    CoreModule
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
   ],
   declarations: [
     CustomerRegisterComponent,
     EstablishmentRegisterComponent,
     LoginComponent
-  ],
-  exports: [
-    CustomerRegisterComponent,
-    EstablishmentRegisterComponent,
-    LoginComponent,
   ]
 })
 export class AuthModule { }

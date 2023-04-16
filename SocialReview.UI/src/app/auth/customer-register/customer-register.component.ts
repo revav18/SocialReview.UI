@@ -8,7 +8,7 @@ import { AlertService } from 'src/app/alert';
 @Component({
   selector: 'app-customer-register',
   templateUrl: './customer-register.component.html',
-  styleUrls: ['./customer-register.component.css']
+  styleUrls: ['../auth.component.css']
 })
 export class CustomerRegisterComponent {
   constructor(
@@ -19,7 +19,7 @@ export class CustomerRegisterComponent {
   ) { }
 
   registerForm = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
+    email: ['', [Validators.required, Validators.pattern(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)]],
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
     phoneNumber: ['', [Validators.required, Validators.pattern(/^\+380\d{9}$/)]],
@@ -27,16 +27,18 @@ export class CustomerRegisterComponent {
   });
 
   onSubmit() {
-    const customerRegister: CustomerRegister = this.registerForm.value as CustomerRegister;
+    if (this.registerForm.valid) {
+      const customerRegister: CustomerRegister = this.registerForm.value as CustomerRegister;
 
-    this.authService.customerRegister(customerRegister).subscribe({
-      next: () => {
-        this.registerForm.reset();
-        this.router.navigate(['/profile]']);
-      },
-      error: (error) => {
-        this.alertService.error(error.error.Details);
-      }
-    });
+      this.authService.customerRegister(customerRegister).subscribe({
+        next: () => {
+          this.registerForm.reset();
+          this.router.navigate(['/profile']);
+        },
+        error: (error) => {
+          this.alertService.error(error.error.Details);
+        }
+      });
+    }
   }
 }

@@ -1,7 +1,7 @@
-import { UserCredential } from "./userCredential.model";
-
-export interface CustomerRegister extends UserCredential {
+export interface CustomerRegister {
+  email: string;
+  password: string;
+  phoneNumber: string;
   firstName: string;
   lastName: string;
-  phoneNumber: string;
 }

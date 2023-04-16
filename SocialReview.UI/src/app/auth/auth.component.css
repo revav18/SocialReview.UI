@@ -8,6 +8,11 @@ mat-error{
   font-size: 16px;
 }
 
+mat-icon{
+  margin-bottom: -7px;
+  margin-right: 4px;
+}
+
 .form {
   width: 80%;
   max-width: 800px;
@@ -67,6 +72,12 @@ mat-error{
   position: relative;
   color: white;
   margin-bottom: 20px;
+}
+
+.mode-link{
+  position: relative;
+  color: white;
+  font-size: 17px;
 }
 
 @media screen and (max-width: 800px) {

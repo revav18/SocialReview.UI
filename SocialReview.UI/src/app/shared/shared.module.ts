@@ -29,7 +29,6 @@ import { FooterComponent } from './layout/footer/footer.component';
   ],
   exports: [
     HeaderComponent,
-    ContentComponent,
     FooterComponent
   ]
 })

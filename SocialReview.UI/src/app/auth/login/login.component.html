@@ -1,24 +1,37 @@
-<div class="login-form-flex">
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    Login
-    <mat-form-field>
-      <input matInput placeholder="Email" formControlName="email">
-      <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
-        Email is required
-      </mat-error>
-      <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
-        Please enter a valid email
-      </mat-error>
-    </mat-form-field>
-    <br />
-    <mat-form-field>
-      <input type="password" matInput placeholder="Password" formControlName="password">
-      <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
-        Password is required
-      </mat-error>
-    </mat-form-field>
-    <div class="button-flex-container">
-      <button mat-raised-button color="primary" type="submit">Login</button>
-    </div>
-  </form>
+<div class="authcontainer">
+  <div class="form">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <h1 class="signup-title">Sign in</h1>
+      <hr class="line">
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="email" />
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+            Email is required
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+            Please enter a valid email
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <br />
+      <div>
+        <mat-form-field>
+          <input type="password" matInput placeholder="Password" formControlName="password" />
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+            Password is required
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">
+            Password length must be at most 8 characters
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <br>
+      <div>
+        <div class="button-flex-container">
+          <button class="signup-btn" mat-raised-button color="primary" type="submit">Sign in</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>

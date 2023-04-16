@@ -2,6 +2,7 @@
   <div class="form">
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <h1 class="signup-title">Sign up</h1>
+      <a routerLink="/establishment-register" class="mode-link">Sign up as establishment <mat-icon>link</mat-icon></a>
       <hr class="line">
       <div>
         <mat-form-field>
@@ -9,7 +10,7 @@
           <mat-error *ngIf="registerForm.get('email')?.hasError('required')">
             Email is required
           </mat-error>
-          <mat-error *ngIf="registerForm.get('email')?.hasError('email')">
+          <mat-error *ngIf="registerForm.get('email')?.hasError('pattern')">
             Please enter a valid email
           </mat-error>
         </mat-form-field>
