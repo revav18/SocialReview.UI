@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+mat-sidenav-container {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 300px;
+}
+
+mat-toolbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+mat-nav-list{
+  padding: 6px;
+}
+
+.toolbar{
+  background: #000000;
+}
+
+.burger-button{
+  background-color: whitesmoke;
+}
+
+.nav-icon {
+  margin-bottom: -4px;
+  margin-right: 5px;
+}
+
+.logo{
+  width: 50px;
+  margin-left: 20px;
+}
+
+.logo-name{
+  color: whitesmoke;
+  font-family: 'Patua One', cursive;
+  font-size: 35px;
+  margin: 5px 0px 5px 7px;
+}

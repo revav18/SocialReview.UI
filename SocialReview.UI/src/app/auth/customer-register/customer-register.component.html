@@ -1,0 +1,68 @@
+<div class="authcontainer">
+  <div class="form">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <h1 class="signup-title">Sign up</h1>
+      <a routerLink="/establishment-register" class="mode-link">Sign up as establishment <mat-icon>link</mat-icon></a>
+      <hr class="line">
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="email" />
+          <mat-error *ngIf="registerForm.get('email')?.hasError('required')">
+            Email is required
+          </mat-error>
+          <mat-error *ngIf="registerForm.get('email')?.hasError('pattern')">
+            Please enter a valid email
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <br />
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="First name" formControlName="firstName" />
+          <mat-error *ngIf="registerForm.get('firstName')?.hasError('required')">
+            First name is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <br />
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Last name" formControlName="lastName" />
+          <mat-error *ngIf="registerForm.get('lastName')?.hasError('required')">
+            Last name is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <br />
+      <div>
+        <mat-form-field>
+          <input matInput type="text" placeholder="Phone number" formControlName="phoneNumber" />
+          <mat-error *ngIf="registerForm.get('phoneNumber')?.hasError('required')">
+            Phone number is required.
+          </mat-error>
+          <mat-error *ngIf="registerForm.get('phoneNumber')?.hasError('pattern')">
+            Phone number must start with +380 and have 9 digits.
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <br />
+      <div>
+        <mat-form-field>
+          <input type="password" matInput placeholder="Password" formControlName="password" />
+          <mat-error *ngIf="registerForm.get('password')?.hasError('required')">
+            Password is required
+          </mat-error>
+          <mat-error *ngIf="registerForm.get('password')?.hasError('minlength')">
+            Password length must be at most 8 characters
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <br>
+      <div>
+        <div class="button-flex-container">
+          <button class="signup-btn" mat-raised-button color="primary" type="submit">Sign up</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
